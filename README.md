@@ -24,6 +24,7 @@ screen in the following format:
 1) First	option
 2) Second	option
 3) Third	option
+
 ...
 Read in a file of names (names.txt). As you read each name, choose 5 unique and random
 questions from the questions file. Store the questions in a set. Enter the name into a dictionary
