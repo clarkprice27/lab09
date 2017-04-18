@@ -1,6 +1,5 @@
 import random
 
-#added this line to test GitKraken
 
 def convert_file_to_list(file):
     """converts open file into list with tuples"""
