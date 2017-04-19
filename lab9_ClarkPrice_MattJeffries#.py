@@ -24,6 +24,8 @@ def convert_file_to_list(file):
         file_list.append((questions[x],questions[x+1],questions[x+2]))
         x += 3
 
+    print_questions(file_list)
+    
     return file_list
 
 
@@ -61,7 +63,19 @@ def create_name_dictionary(names_file):
             rand_set.add(random.randint(1,28))
         assigned_questions[name] = sorted(rand_set)
         
-    print(assigned_questions)
+    return assigned_questions
+
+
+
+def write_dict_to_file(name_dict):
+    """writes the dictionary to file 'togive.txt' """
+    
+    file = open('togive.txt', 'w')
+
+    for name in name_dict:
+        print('{:<10} Questions {}'.format(name, name_dict[name]), file=file)
+        print('{:<10} Questions {}'.format(name, name_dict[name]))
+            
 
 
 
@@ -73,7 +87,8 @@ def main():
         file_list = convert_file_to_list(file)
 
         names_file = open('names.txt', 'r')
-        create_name_dictionary(names_file)
+        name_dict = create_name_dictionary(names_file)
+        write_dict_to_file(name_dict)
 
         file.close()
         names_file.close()
